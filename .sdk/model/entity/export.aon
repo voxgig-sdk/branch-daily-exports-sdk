@@ -1,0 +1,143 @@
+# Entity: export
+
+main: kit: entity: export: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "branch_key"
+      req: true
+      short: "The Branch Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)"
+      type: "`$STRING`"
+    }
+    {
+      name: "branch_secret"
+      req: true
+      short: "The Branch Secret Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)"
+      type: "`$STRING`"
+    }
+    {
+      name: "eo_branch_cta_view"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_click"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_commerce_event"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_content_event"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_custom_event"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_dismissal"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_impression"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_install"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_open"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_pageview"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_reinstall"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_user_lifecycle_event"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_web_session_start"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "eo_web_to_app_auto_redirect"
+      req: false
+      short: "N/A"
+      type: "`$ARRAY`"
+    }
+    {
+      format: "date"
+      name: "export_date"
+      req: true
+      short: "The UTC date of the requested data export."
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "export"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          contract: {
+            id: "POST /export"
+            json: "{\"operationId\":\"postDailyExports\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Daily Exports Request Body\",\"properties\":{\"branch_key\":{\"description\":\"The Branch Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)\",\"example\":\"key_live_xxxx\",\"type\":\"string\"},\"branch_secret\":{\"description\":\"The Branch Secret Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)\",\"example\":\"secret_live_xxxx\",\"type\":\"string\"},\"export_date\":{\"description\":\"The UTC date of the requested data export.\",\"example\":\"2023-05-19\",\"format\":\"date\",\"type\":\"string\"}},\"required\":[\"branch_key\",\"branch_secret\",\"export_date\"],\"type\":\"object\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"eo_branch_cta_view\":{\"description\":\"N/A\",\"items\":{\"example\":\"https://branch-exports-web-usw2.s3.us-west-1.amazonaws.com/api_export/y%3D2023/m%3D05/d%3D19/app_id%3D{APP_ID_HERE}/topic%3Deo_branch_cta_view/unique-csv-file-name-here.csv.gz?X-Amz-Algorithm={AMZ_ALGORITHM_HERE}&X-Amz-Date={AMZ_DATE_HERE}&X-Amz-SignedHeaders={AMZ_SIGNED_HEADERS_HERE}&X-Amz-Expires={AMZ_EXPIRATION_HERE}&X-Amz-Credential={AMZ_CREDENTIAL_HERE}&X-Amz-Signature={AMZ_SIGNATURE_HERE}\\n\",\"type\":\"string\"},\"type\":\"array\"},\"eo_click\":{\"description\":\"N/A\",\"items\":{\"example\":\"https://branch-exports-web-usw2.s3.us-west-1.amazonaws.com/api_export/y%3D2023/m%3D05/d%3D19/app_id%3D{APP_ID_HERE}/topic%3Deo_click/unique-csv-file-name-here.csv.gz?X-Amz-Algorithm={AMZ_ALGORITHM_HERE}&X-Amz-Date={AMZ_DATE_HERE}&X-Amz-SignedHeaders={AMZ_SIGNED_HEADERS_HERE}&X-Amz-Expires={AMZ_EXPIRATION_HERE}&X-Amz-Credential={AMZ_CREDENTIAL_HERE}&X-Amz-Signature={AMZ_SIGNATURE_HERE}\\n\",\"type\":\"string\"},\"type\":\"array\"},\"eo_commerce_event\":{\"description\":\"N/A\",\"items\":{\"example\":\"https://branch-exports-web-usw2.s3.us-west-1.amazonaws.com/api_export/y%3D2023/m%3D05/d%3D19/app_id%3D{APP_ID_HERE}/topic%3Deo_commerce_event/unique-csv-file-name-here.csv.gz?X-Amz-Algorithm={AMZ_ALGORITHM_HERE}&X-Amz-Date={AMZ_DATE_HERE}&X-Amz-SignedHeaders={AMZ_SIGNED_HEADERS_HERE}&X-Amz-Expires={AMZ_EXPIRATION_HERE}&X-Amz-Credential={AMZ_CREDENTIAL_HERE}&X-Amz-Signature={AMZ_SIGNATURE_HERE}\\n\",\"type\":\"string\"},\"type\":\"array\"},\"eo_content_event\":{\"description\":\"N/A\",\"items\":{\"example\":\"https://branch-exports-web-usw2.s3.us-west-1.amazonaws.com/api_export/y%3D2023/m%3D05/d%3D19/app_id%3D{APP_ID_HERE}/topic%3Deo_content_event/unique-csv-file-name-here.csv.gz?X-Amz-Algorithm={AMZ_ALGORITHM_HERE}&X-Amz-Date={AMZ_DATE_HERE}&X-Amz-SignedHeaders={AMZ_SIGNED_HEADERS_HERE}&X-Amz-Expires={AMZ_EXPIRATION_HERE}&X-Amz-Credential={AMZ_CREDENTIAL_HERE}&X-Amz-Signature={AMZ_SIGNATURE_HERE}\\n\",\"type\":\"string\"},\"type\":\"array\"},\"eo_custom_event\":{\"description\":\"N/A\",\"items\":{\"example\":\"\",\"type\":\"string\"},\"type\":\"array\"},\"eo_dismissal\":{\"description\":\"N/A\",\"items\":{\"example\":\"\",\"type\":\"string\"},\"type\":\"array\"},\"eo_impression\":{\"description\":\"N/A\",\"items\":{\"example\":\"\",\"type\":\"string\"},\"type\":\"array\"},\"eo_install\":{\"description\":\"N/A\",\"items\":{\"example\":\"https://branch-exports-web-usw2.s3.us-west-1.amazonaws.com/api_export/y%3D2023/m%3D05/d%3D19/app_id%3D{APP_ID_HERE}/topic%3Deo_install/unique-csv-file-name-here.csv.gz?X-Amz-Algorithm={AMZ_ALGORITHM_HERE}&X-Amz-Date={AMZ_DATE_HERE}&X-Amz-SignedHeaders={AMZ_SIGNED_HEADERS_HERE}&X-Amz-Expires={AMZ_EXPIRATION_HERE}&X-Amz-Credential={AMZ_CREDENTIAL_HERE}&X-Amz-Signature={AMZ_SIGNATURE_HERE}\\n\",\"type\":\"string\"},\"type\":\"array\"},\"eo_open\":{\"description\":\"N/A\",\"items\":{\"example\":\"https://branch-exports-web-usw2.s3.us-west-1.amazonaws.com/api_export/y%3D2023/m%3D05/d%3D19/app_id%3D{APP_ID_HERE}/topic%3Deo_open/unique-csv-file-name-here.csv.gz?X-Amz-Algorithm={AMZ_ALGORITHM_HERE}&X-Amz-Date={AMZ_DATE_HERE}&X-Amz-SignedHeaders={AMZ_SIGNED_HEADERS_HERE}&X-Amz-Expires={AMZ_EXPIRATION_HERE}&X-Amz-Credential={AMZ_CREDENTIAL_HERE}&X-Amz-Signature={AMZ_SIGNATURE_HERE}\\n\",\"type\":\"string\"},\"type\":\"array\"},\"eo_pageview\":{\"description\":\"N/A\",\"items\":{\"example\":\"https://branch-exports-web-usw2.s3.us-west-1.amazonaws.com/api_export/y%3D2023/m%3D05/d%3D19/app_id%3D{APP_ID_HERE}/topic%3Deo_pageview/unique-csv-file-name-here.csv.gz?X-Amz-Algorithm={AMZ_ALGORITHM_HERE}&X-Amz-Date={AMZ_DATE_HERE}&X-Amz-SignedHeaders={AMZ_SIGNED_HEADERS_HERE}&X-Amz-Expires={AMZ_EXPIRATION_HERE}&X-Amz-Credential={AMZ_CREDENTIAL_HERE}&X-Amz-Signature={AMZ_SIGNATURE_HERE}\\n\",\"type\":\"string\"},\"type\":\"array\"},\"eo_reinstall\":{\"description\":\"N/A\",\"items\":{\"example\":\"https://branch-exports-web-usw2.s3.us-west-1.amazonaws.com/api_export/y%3D2023/m%3D05/d%3D19/app_id%3D{APP_ID_HERE}/topic%3Deo_reinstall/unique-csv-file-name-here.csv.gz?X-Amz-Algorithm={AMZ_ALGORITHM_HERE}&X-Amz-Date={AMZ_DATE_HERE}&X-Amz-SignedHeaders={AMZ_SIGNED_HEADERS_HERE}&X-Amz-Expires={AMZ_EXPIRATION_HERE}&X-Amz-Credential={AMZ_CREDENTIAL_HERE}&X-Amz-Signature={AMZ_SIGNATURE_HERE}\\n\",\"type\":\"string\"},\"type\":\"array\"},\"eo_user_lifecycle_event\":{\"description\":\"N/A\",\"items\":{\"example\":\"\",\"type\":\"string\"},\"type\":\"array\"},\"eo_web_session_start\":{\"description\":\"N/A\",\"items\":{\"example\":\"https://branch-exports-web-usw2.s3.us-west-1.amazonaws.com/api_export/y%3D2023/m%3D05/d%3D19/app_id%3D{APP_ID_HERE}/topic%3Deo_web_session_start/unique-csv-file-name-here.csv.gz?X-Amz-Algorithm={AMZ_ALGORITHM_HERE}&X-Amz-Date={AMZ_DATE_HERE}&X-Amz-SignedHeaders={AMZ_SIGNED_HEADERS_HERE}&X-Amz-Expires={AMZ_EXPIRATION_HERE}&X-Amz-Credential={AMZ_CREDENTIAL_HERE}&X-Amz-Signature={AMZ_SIGNATURE_HERE}\\n\",\"type\":\"string\"},\"type\":\"array\"},\"eo_web_to_app_auto_redirect\":{\"description\":\"N/A\",\"items\":{\"example\":\"\",\"type\":\"string\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Status of aggregate export\"},\"400\":{\"content\":{\"application/json\":{\"examples\":{\"Result\":{\"value\":\"{\\n    \\\"error\\\": {\\n        \\\"message\\\": \\\"Authentication failed !\\\",\\n        \\\"code\\\": 400\\n    }\\n}\"}},\"schema\":{\"properties\":{\"error\":{\"properties\":{\"code\":{\"example\":\"400\",\"type\":\"integer\"},\"message\":{\"example\":\"Authentication failed !\",\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Authentication Failed\"},\"429\":{\"content\":{\"application/json\":{\"examples\":{\"Result\":{\"value\":\"{\\n    \\\"error\\\": {\\n        \\\"code\\\": 429,\\n        \\\"message\\\": \\\"Rate limit reached.\\\"\\n    }\\n}\"}},\"schema\":{\"properties\":{\"error\":{\"properties\":{\"code\":{\"example\":\"429\",\"type\":\"integer\"},\"message\":{\"example\":\"Rate limit reached.\",\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Rate Limit Reached\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
+          method: "POST"
+          orig: "/export"
+          segments: [
+            {
+              lit: "export"
+            }
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

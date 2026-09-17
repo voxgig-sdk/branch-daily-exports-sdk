@@ -1,0 +1,70 @@
+<?php
+declare(strict_types=1);
+
+// BranchDailyExports SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+BranchDailyExportsUtility::setRegistrar(function (BranchDailyExportsUtility $u): void {
+    $u->clean = [BranchDailyExportsClean::class, 'call'];
+    $u->done = [BranchDailyExportsDone::class, 'call'];
+    $u->make_error = [BranchDailyExportsMakeError::class, 'call'];
+    $u->feature_add = [BranchDailyExportsFeatureAdd::class, 'call'];
+    $u->feature_hook = [BranchDailyExportsFeatureHook::class, 'call'];
+    $u->feature_init = [BranchDailyExportsFeatureInit::class, 'call'];
+    $u->fetcher = [BranchDailyExportsFetcher::class, 'call'];
+    $u->make_fetch_def = [BranchDailyExportsMakeFetchDef::class, 'call'];
+    $u->make_context = [BranchDailyExportsMakeContext::class, 'call'];
+    $u->make_options = [BranchDailyExportsMakeOptions::class, 'call'];
+    $u->make_request = [BranchDailyExportsMakeRequest::class, 'call'];
+    $u->make_response = [BranchDailyExportsMakeResponse::class, 'call'];
+    $u->make_result = [BranchDailyExportsMakeResult::class, 'call'];
+    $u->make_point = [BranchDailyExportsMakePoint::class, 'call'];
+    $u->make_spec = [BranchDailyExportsMakeSpec::class, 'call'];
+    $u->make_url = [BranchDailyExportsMakeUrl::class, 'call'];
+    $u->param = [BranchDailyExportsParam::class, 'call'];
+    $u->prepare_auth = [BranchDailyExportsPrepareAuth::class, 'call'];
+    $u->prepare_body = [BranchDailyExportsPrepareBody::class, 'call'];
+    $u->prepare_headers = [BranchDailyExportsPrepareHeaders::class, 'call'];
+    $u->prepare_method = [BranchDailyExportsPrepareMethod::class, 'call'];
+    $u->prepare_params = [BranchDailyExportsPrepareParams::class, 'call'];
+    $u->prepare_path = [BranchDailyExportsPreparePath::class, 'call'];
+    $u->prepare_query = [BranchDailyExportsPrepareQuery::class, 'call'];
+    $u->graphql_body = [BranchDailyExportsGraphql::class, 'body'];
+    $u->graphql_errors = [BranchDailyExportsGraphql::class, 'errors'];
+    $u->result_basic = [BranchDailyExportsResultBasic::class, 'call'];
+    $u->result_body = [BranchDailyExportsResultBody::class, 'call'];
+    $u->result_headers = [BranchDailyExportsResultHeaders::class, 'call'];
+    $u->transform_request = [BranchDailyExportsTransformRequest::class, 'call'];
+    $u->transform_response = [BranchDailyExportsTransformResponse::class, 'call'];
+});

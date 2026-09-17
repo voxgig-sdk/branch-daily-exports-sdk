@@ -1,0 +1,27 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        email: "support@branch.io"
+        name: "Branch Support"
+        url: "https://help.branch.io/using-branch/page/submit-a-ticket"
+      }
+      description: "Export ALL device-level data from a specific day."
+      servers: [
+        {
+          url: "https://api2.branch.io/v3"
+        }
+      ]
+      summary: "Export ALL device-level data from a specific day."
+      termsOfService: "https://branch.io/policies/"
+      title: "Daily Exports API"
+      version: "1.0.0"
+      website: "https://api2.branch.io"
+    }
+  }
+}
+

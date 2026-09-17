@@ -1,0 +1,18 @@
+# BasicExportFlow
+
+main: kit: flow: BasicExportFlow:
+{
+  entity: "export",
+  kind: "basic",
+  name: "BasicExportFlow",
+  step: [
+    {
+      input: {
+        ref: "export_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicExportFlow"
+}
