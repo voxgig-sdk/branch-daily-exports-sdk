@@ -1,7 +1,7 @@
 // Typed models for the BranchDailyExports SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,23 +14,6 @@ import (
 
 // Export is the typed data model for the export entity.
 type Export struct {
-	BranchKey string `json:"branch_key"`
-	BranchSecret string `json:"branch_secret"`
-	EoBranchCtaView *[]any `json:"eo_branch_cta_view,omitempty"`
-	EoClick *[]any `json:"eo_click,omitempty"`
-	EoCommerceEvent *[]any `json:"eo_commerce_event,omitempty"`
-	EoContentEvent *[]any `json:"eo_content_event,omitempty"`
-	EoCustomEvent *[]any `json:"eo_custom_event,omitempty"`
-	EoDismissal *[]any `json:"eo_dismissal,omitempty"`
-	EoImpression *[]any `json:"eo_impression,omitempty"`
-	EoInstall *[]any `json:"eo_install,omitempty"`
-	EoOpen *[]any `json:"eo_open,omitempty"`
-	EoPageview *[]any `json:"eo_pageview,omitempty"`
-	EoReinstall *[]any `json:"eo_reinstall,omitempty"`
-	EoUserLifecycleEvent *[]any `json:"eo_user_lifecycle_event,omitempty"`
-	EoWebSessionStart *[]any `json:"eo_web_session_start,omitempty"`
-	EoWebToAppAutoRedirect *[]any `json:"eo_web_to_app_auto_redirect,omitempty"`
-	ExportDate string `json:"export_date"`
 }
 
 // ExportCreateData is the typed request payload for Export.CreateTyped.

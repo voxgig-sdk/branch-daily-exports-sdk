@@ -1,0 +1,159 @@
+# Entity: export
+
+main: kit: entity: export: {
+
+  alias: field: {}
+
+  fields: {
+    branch_key: {
+      h: "Branch Key"
+      n: "branch_key"
+      r: true
+      sh: "The Branch Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)"
+      t: "`$STRING`"
+    }
+    branch_secret: {
+      h: "Branch Secret"
+      n: "branch_secret"
+      r: true
+      sh: "The Branch Secret Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)"
+      t: "`$STRING`"
+    }
+    eo_branch_cta_view: {
+      h: "Eo Branch Cta View"
+      n: "eo_branch_cta_view"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_click: {
+      h: "Eo Click"
+      n: "eo_click"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_commerce_event: {
+      h: "Eo Commerce Event"
+      n: "eo_commerce_event"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_content_event: {
+      h: "Eo Content Event"
+      n: "eo_content_event"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_custom_event: {
+      h: "Eo Custom Event"
+      n: "eo_custom_event"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_dismissal: {
+      h: "Eo Dismissal"
+      n: "eo_dismissal"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_impression: {
+      h: "Eo Impression"
+      n: "eo_impression"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_install: {
+      h: "Eo Install"
+      n: "eo_install"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_open: {
+      h: "Eo Open"
+      n: "eo_open"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_pageview: {
+      h: "Eo Pageview"
+      n: "eo_pageview"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_reinstall: {
+      h: "Eo Reinstall"
+      n: "eo_reinstall"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_user_lifecycle_event: {
+      h: "Eo User Lifecycle Event"
+      n: "eo_user_lifecycle_event"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_web_session_start: {
+      h: "Eo Web Session Start"
+      n: "eo_web_session_start"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    eo_web_to_app_auto_redirect: {
+      h: "Eo Web To App Auto Redirect"
+      n: "eo_web_to_app_auto_redirect"
+      r: false
+      sh: "N/A"
+      t: "`$ARRAY`"
+    }
+    export_date: {
+      fo: "date"
+      h: "Export Date"
+      n: "export_date"
+      r: true
+      sh: "The UTC date of the requested data export."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "export"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /export"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/export"
+          s: [
+            {
+              lit: "export"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

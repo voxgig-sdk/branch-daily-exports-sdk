@@ -222,92 +222,109 @@ class Config {
       "fields": [
         {
           "name": "branch_key",
+          "title": "Branch Key",
+          "type": "`$STRING`",
           "req": true,
-          "short": "The Branch Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)",
-          "type": "`$STRING`"
+          "short": "The Branch Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)"
         },
         {
           "name": "branch_secret",
+          "title": "Branch Secret",
+          "type": "`$STRING`",
           "req": true,
-          "short": "The Branch Secret Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)",
-          "type": "`$STRING`"
+          "short": "The Branch Secret Key of the originating app obtained in your [Account Settings](https://help.branch.io/using-branch/docs/profile-settings)"
         },
         {
           "name": "eo_branch_cta_view",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Branch Cta View",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_click",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Click",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_commerce_event",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Commerce Event",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_content_event",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Content Event",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_custom_event",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Custom Event",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_dismissal",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Dismissal",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_impression",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Impression",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_install",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Install",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_open",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Open",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_pageview",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Pageview",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_reinstall",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Reinstall",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_user_lifecycle_event",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo User Lifecycle Event",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_web_session_start",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Web Session Start",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
           "name": "eo_web_to_app_auto_redirect",
-          "short": "N/A",
-          "type": "`$ARRAY`"
+          "title": "Eo Web To App Auto Redirect",
+          "type": "`$ARRAY`",
+          "short": "N/A"
         },
         {
-          "format": "date",
           "name": "export_date",
+          "title": "Export Date",
+          "type": "`$STRING`",
           "req": true,
           "short": "The UTC date of the requested data export.",
-          "type": "`$STRING`"
+          "format": "date"
         }
       ],
       "name": "export",
@@ -317,7 +334,6 @@ class Config {
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/export",
@@ -326,14 +342,16 @@ class Config {
                   "lit": "export"
                 }
               ],
-              "select": {},
+              "parts": [
+                "export"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "export"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
